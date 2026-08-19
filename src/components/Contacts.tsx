@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Button } from './ui/button'
 
 const Contacts = () => {
@@ -8,7 +8,7 @@ const Contacts = () => {
         <h2  className=' text-sm md:p-5 md:pb-0 pt-5  font-bold text-accent black-ops-one-regular ' > LETS TALK</h2>
       <h1 className='  text-xl md:text-4xl md:pl-5 pb-3 md:pb-0 text-border black-ops-one-regular '><span className=''>Get In</span> <span className='text-foreground playwrite-gb-j'>Touch</span> </h1>
       </div>
-      <div id='firstproject' className="md:hover:border-3 border-1  hover:border-accent w-full h-fit rounded flex flex-col md:flex-row overflow-clip  md:m-5  ">
+      <div id='firstproject' className="md:hover:border-3 border hover:border-accent w-full h-fit rounded flex flex-col md:flex-row overflow-clip  md:m-5  ">
        
         <div id="right" className='w-full md:w-1/3  p-4'> 
         <h1 className=' font-bold text-border pl-2' >Open to opportunities & collaborations</h1>
@@ -19,7 +19,7 @@ const Contacts = () => {
      <a href="https://www.linkedin.com/in/tajimahmed-softwaredeveloper/"> <Button className='w-full border-2 mb-2 dark:bg-accent text-white rounded-[0.5rem] bg-primary-foreground '>  Linkedin.com </Button></a>
 
         </div>
-        <div id="left" className="w-full hover:border-foreground md:w-2/3 justify-center md:rounded align-middle md:m-1 p-3 flex flex-col  p-4"> 
+        <div id="left" className="w-full hover:border-foreground md:w-2/3 justify-center md:rounded align-middle md:m-1  flex flex-col  p-4"> 
             {/* can use field-group */}
             {/* <h1 className='text-4xl text-accent' >Github Stats</h1> */}
             <img className=''
