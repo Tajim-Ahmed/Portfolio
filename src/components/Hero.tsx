@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { motion } from "framer-motion";
 import { Button } from './ui/button';
 
@@ -44,8 +44,8 @@ const Hero = () => {
   </motion.span>
 ))} </h1> </h1>
 
-  <Button onClick={downloadResume} className=' mt-5  text-primary bg-foreground border-1 p-5  rounded '> {`-> Download Resume`}</Button>
- <Button onClick={scrollToContact}  className=' md:inline-flex flex mt-5 md:ml-10  text-foreground bg-background md:p-5  border-1 rounded '>Get In Touch</Button>
+  <Button onClick={downloadResume} className=' mt-5  text-primary bg-foreground border p-5  rounded '> {`-> Download Resume`}</Button>
+ <Button onClick={scrollToContact}  className=' md:inline-flex flex mt-5 md:ml-10  text-foreground bg-background md:p-5  border rounded '>Get In Touch</Button>
 
  </div>
     </div>

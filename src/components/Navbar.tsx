@@ -30,7 +30,7 @@ const Navbar = () => {
 
 const toggleTheme = () => {
   setIsDark(!isDark);
-  document.getElementById('theme').classList.toggle('dark');
+  document.getElementById('theme')?.classList.toggle('dark');
 };
 
 

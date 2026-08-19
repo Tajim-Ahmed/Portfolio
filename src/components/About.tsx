@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Photo from "@/assets/Tajim_img.png"
 
 
