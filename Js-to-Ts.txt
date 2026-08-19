@@ -1,0 +1,479 @@
+Since you already know **React with JavaScript**, learning **React with TypeScript** is much easier than learning React from scratch. For a portfolio project, you'll probably be productive within a few days.
+
+# Biggest Difference
+
+JavaScript:
+
+```jsx
+const name = "Tajim";
+```
+
+TypeScript:
+
+```tsx
+const name: string = "Tajim";
+```
+
+TypeScript lets you specify what type of data a variable can hold.
+
+---
+
+# 1. File Extensions
+
+### React Component
+
+JavaScript:
+
+```text
+Home.jsx
+```
+
+TypeScript:
+
+```text
+Home.tsx
+```
+
+Use `.tsx` when JSX is present.
+
+---
+
+### Utility File
+
+JavaScript:
+
+```text
+utils.js
+```
+
+TypeScript:
+
+```text
+utils.ts
+```
+
+Use `.ts` when no JSX is present.
+
+---
+
+# 2. Variables
+
+JavaScript:
+
+```js
+const age = 22;
+```
+
+TypeScript:
+
+```ts
+const age: number = 22;
+```
+
+Common types:
+
+```ts
+string
+number
+boolean
+object
+array
+```
+
+Examples:
+
+```ts
+const name: string = "Tajim";
+
+const age: number = 22;
+
+const isAdmin: boolean = false;
+```
+
+---
+
+# 3. Arrays
+
+JavaScript:
+
+```js
+const skills = ["React", "Node"];
+```
+
+TypeScript:
+
+```ts
+const skills: string[] = ["React", "Node"];
+```
+
+Number array:
+
+```ts
+const marks: number[] = [90, 85];
+```
+
+---
+
+# 4. Objects
+
+JavaScript:
+
+```js
+const user = {
+  name: "Tajim",
+  age: 22,
+};
+```
+
+TypeScript:
+
+```ts
+const user: {
+  name: string;
+  age: number;
+} = {
+  name: "Tajim",
+  age: 22,
+};
+```
+
+Better way:
+
+```ts
+type User = {
+  name: string;
+  age: number;
+};
+
+const user: User = {
+  name: "Tajim",
+  age: 22,
+};
+```
+
+---
+
+# 5. Functions
+
+JavaScript:
+
+```js
+function add(a, b) {
+  return a + b;
+}
+```
+
+TypeScript:
+
+```ts
+function add(a: number, b: number): number {
+  return a + b;
+}
+```
+
+Syntax:
+
+```ts
+function name(parameter: type): returnType
+```
+
+---
+
+# 6. Props
+
+This is the most common TypeScript thing in React.
+
+JavaScript:
+
+```jsx
+function Card({ title }) {
+  return <h1>{title}</h1>;
+}
+```
+
+TypeScript:
+
+```tsx
+type CardProps = {
+  title: string;
+};
+
+function Card({ title }: CardProps) {
+  return <h1>{title}</h1>;
+}
+```
+
+Usage:
+
+```tsx
+<Card title="My Project" />
+```
+
+---
+
+# 7. useState
+
+JavaScript:
+
+```jsx
+const [count, setCount] = useState(0);
+```
+
+TypeScript:
+
+```tsx
+const [count, setCount] = useState<number>(0);
+```
+
+String:
+
+```tsx
+const [name, setName] = useState<string>("");
+```
+
+Array:
+
+```tsx
+const [skills, setSkills] = useState<string[]>([]);
+```
+
+Object:
+
+```tsx
+type User = {
+  name: string;
+  age: number;
+};
+
+const [user, setUser] = useState<User | null>(null);
+```
+
+---
+
+# 8. useRef
+
+JavaScript:
+
+```jsx
+const inputRef = useRef();
+```
+
+TypeScript:
+
+```tsx
+const inputRef = useRef<HTMLInputElement>(null);
+```
+
+---
+
+# 9. Event Handling
+
+JavaScript:
+
+```jsx
+const handleChange = (e) => {
+  console.log(e.target.value);
+};
+```
+
+TypeScript:
+
+```tsx
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement>
+) => {
+  console.log(e.target.value);
+};
+```
+
+VS Code usually auto-suggests these types.
+
+---
+
+# 10. Interface vs Type
+
+You'll see both.
+
+Most React developers use:
+
+```ts
+type User = {
+  name: string;
+  age: number;
+};
+```
+
+You can use `type` almost everywhere.
+
+---
+
+# VS Code Shortcuts
+
+### Create New File
+
+No special TypeScript shortcut.
+
+Use:
+
+```text
+Ctrl + N
+```
+
+or
+
+Right Click Folder → New File
+
+Example:
+
+```text
+Home.tsx
+Navbar.tsx
+ProjectCard.tsx
+```
+
+---
+
+# Fast React Component Snippets
+
+Install extension:
+
+**ES7+ React/Redux/React-Native Snippets**
+
+Then:
+
+### Type
+
+```text
+rafce
+```
+
+Press Enter
+
+Generates:
+
+```tsx
+import React from 'react'
+
+const Home = () => {
+  return (
+    <div>Home</div>
+  )
+}
+
+export default Home
+```
+
+This works in `.tsx` files too.
+
+---
+
+# TypeScript Errors You'll See Often
+
+### Error
+
+```ts
+Type 'string' is not assignable to type 'number'
+```
+
+Example:
+
+```ts
+const age: number = "22";
+```
+
+Fix:
+
+```ts
+const age: number = 22;
+```
+
+---
+
+### Error
+
+```ts
+Property does not exist
+```
+
+Example:
+
+```ts
+user.email
+```
+
+But:
+
+```ts
+type User = {
+  name: string;
+};
+```
+
+No `email` exists.
+
+---
+
+# For Your Portfolio Project
+
+You only need to know:
+
+✅ Props typing
+
+✅ useState typing
+
+✅ Arrays
+
+✅ Objects
+
+✅ Functions
+
+✅ Event handlers
+
+That's about **80% of the TypeScript you'll use** in a portfolio website with React, Tailwind, shadcn, Framer Motion, and React Router.
+
+Whenever VS Code shows a red TypeScript error, read it carefully—it usually tells you exactly what type it expected and what type you provided. That's one of the biggest advantages over JavaScript.
+
+
+type
+
+Used to define what an object should look like.
+
+type User = {
+  name: string;
+  age: number;
+};
+
+User is NOT a variable.
+
+It doesn't store anything.
+
+It only tells TypeScript:
+
+"Whenever something is of type User, it must have name and age."
+
+Using both together
+type User = {
+  name: string;
+  age: number;
+};
+
+const user: User = {
+  name: "Tajim",
+  age: 22,
+};
+
+Here:
+
+User
+
+is a type.
+
+user
+
+is a variable.
+
+
+
+
+
+dark-light theme and motion while scrolling through out the page 
