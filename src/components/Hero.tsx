@@ -6,7 +6,7 @@ import { Button } from './ui/button';
 
 const downloadResume = () => {
   const link = document.createElement("a");
-  link.href = "/Tajim-Ahmed-Resume.pdf";
+  link.href = "/tajimresume08-26.pdf";
   link.download = "Tajim-Ahmed-Resume.pdf";
   link.click();
 };
